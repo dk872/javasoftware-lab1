@@ -45,4 +45,21 @@ public class MatrixProcessor {
         }
         return result;
     }
+
+    public static int calculateSum(byte[][] matrix) {
+        int sum = 0;
+
+        for (int i = 0; i < matrix.length; i++) {
+            byte extremeValue;
+
+            if (i % 2 == 0) {
+                extremeValue = findMax(matrix[i]);
+            } else {
+                extremeValue = findMin(matrix[i]);
+            }
+
+            sum += extremeValue;
+        }
+        return sum;
+    }
 }
