@@ -29,6 +29,12 @@ public class MatrixProcessor {
         return min;
     }
 
+    private static void printMatrix(byte[][] matrix) {
+        for (byte[] row : matrix) {
+            System.out.println(Arrays.toString(row));
+        }
+    }
+
     public static byte[][] multiplyMatrix(byte[][] matrix, byte multiplier) {
         byte[][] result = new byte[matrix.length][matrix[0].length];
 
