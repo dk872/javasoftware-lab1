@@ -7,6 +7,28 @@ public class MatrixProcessor {
     public static void main(String[] args) {
     }
 
+    private static byte findMax(byte[] row) {
+        byte max = row[0];
+
+        for (byte val : row) {
+            if (val > max) {
+                max = val;
+            }
+        }
+        return max;
+    }
+
+    private static byte findMin(byte[] row) {
+        byte min = row[0];
+
+        for (byte val : row) {
+            if (val < min) {
+                min = val;
+            }
+        }
+        return min;
+    }
+
     public static byte[][] multiplyMatrix(byte[][] matrix, byte multiplier) {
         byte[][] result = new byte[matrix.length][matrix[0].length];
 
