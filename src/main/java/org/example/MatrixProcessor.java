@@ -62,4 +62,28 @@ public class MatrixProcessor {
         }
         return sum;
     }
+
+    public static void validateMatrix(byte[][] matrix) {
+        if (matrix == null) {
+            throw new NullPointerException("Matrix is null");
+        }
+        if (matrix.length == 0) {
+            throw new IllegalArgumentException("Matrix is empty");
+        }
+
+        int expectedLength = -1;
+        for (int i = 0; i < matrix.length; i++) {
+            if (matrix[i] == null) {
+                throw new NullPointerException("Row " + i + " of the matrix is not initialized (null)");
+            }
+            if (matrix[i].length == 0) {
+                throw new IllegalArgumentException("Row " + i + " of the matrix is empty");
+            }
+            if (expectedLength == -1) {
+                expectedLength = matrix[i].length;
+            } else if (matrix[i].length != expectedLength) {
+                throw new IllegalArgumentException("Matrix rows have different lengths");
+            }
+        }
+    }
 }
