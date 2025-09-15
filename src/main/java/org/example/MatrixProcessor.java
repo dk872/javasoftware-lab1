@@ -6,7 +6,7 @@ public class MatrixProcessor {
 
     public static void main(String[] args) {
         final byte a = 3;
-        // All values are within [-42, 42] so that there is no byte overflow when multiplying by 3.
+        // All values are within [-42, 42] so that there is no byte overflow when multiplying by 3
         byte[][] B = {
                 {1, 2, 3, 4, 5, 6, 7},
                 {7, 6, 5, 4, 3, 2, 5},
