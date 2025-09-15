@@ -5,6 +5,29 @@ import java.util.Arrays;
 public class MatrixProcessor {
 
     public static void main(String[] args) {
+        final byte a = 3;
+        // All values are within [-42, 42] so that there is no byte overflow when multiplying by 3.
+        byte[][] B = {
+                {1, 2, 3, 4, 5, 6, 7},
+                {7, 6, 5, 4, 3, 2, 5},
+                {-1, -2, -3, -4, -5, -6, -7},
+                {10, 20, 30, 40, -40, -30, -20},
+                {5, -5, 10, -10, 15, -15, 20},
+                {8, 16, 24, -24, 32, -32, 42}
+        };
+
+        validateMatrix(B);
+
+        System.out.println("Initial matrix B:");
+        printMatrix(B);
+
+        byte[][] C = multiplyMatrix(B, a);
+        System.out.println("\nResulting matrix C = a * B:");
+        printMatrix(C);
+
+        int result = calculateSum(C);
+        System.out.println("\nSum of the largest elements in even rows "
+                + "and the smallest in odd rows: " + result);
     }
 
     private static byte findMax(byte[] row) {
