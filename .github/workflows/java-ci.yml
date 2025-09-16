@@ -1,4 +1,4 @@
-name: Unit tests
+name: Run program and unit tests
 
 on:
   push:
@@ -26,3 +26,6 @@ jobs:
 
     - name: Run tests
       run: mvn test
+
+    - name: Run MatrixProcessor
+      run: java -cp target/classes org.example.MatrixProcessor
