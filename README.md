@@ -13,22 +13,18 @@ C7 = 15 % 7 = **1**;
 C11 = 15 % 11 = **4**.
 
 ## Features
-- **Matrix validation**
-
+### Matrix validation
 Ensures the matrix is non-null, non-empty, and all rows have consistent lengths.
 
-- **Matrix multiplication**
-
+### Matrix multiplication
 Multiplies each element of a 2D byte matrix by a given byte scalar, with overflow protection.
 
-- **Custom sum calculation**
-
+### Custom sum calculation
 Computes the sum of:
   - the maximum elements in even-indexed rows;
   - the minimum elements in odd-indexed rows.
 
-- **Safe and clear error handling**
-
+### Safe and clear error handling
 Handles arithmetic and input errors with descriptive messages.
 
 ## How to run
