@@ -70,8 +70,8 @@ class MatrixProcessorTest {
                 {3, 6},
                 {9, 12}
         };
-
         byte[][] result = MatrixProcessor.multiplyMatrix(matrix, multiplier);
+
         assertArrayEquals(expected, result);
     }
 
@@ -85,8 +85,8 @@ class MatrixProcessorTest {
                 {0, 0, 0},
                 {0, 0, 0}
         };
-
         byte[][] result = MatrixProcessor.multiplyMatrix(matrix, (byte)0);
+
         assertArrayEquals(expected, result);
     }
 
@@ -148,8 +148,8 @@ class MatrixProcessorTest {
                 {10, 20, 15}, // max = 20
                 {-1, -5, -3}  // min = -5
         };
-
         int expectedSum = 5 + 2 + 20 + (-5);
+
         assertEquals(expectedSum, MatrixProcessor.calculateSum(matrix));
     }
 
@@ -168,8 +168,8 @@ class MatrixProcessorTest {
                 {10, 20, 30},
                 {5, 1, 3}
         };
-
         int expectedSum = 30 + 1;
+
         assertEquals(expectedSum, MatrixProcessor.calculateSum(matrix));
     }
 
@@ -180,8 +180,8 @@ class MatrixProcessorTest {
                 {-1, -50, -3},
                 {0, 1, 2}
         };
-
         int expectedSum = (-5) + (-50) + 2;
+
         assertEquals(expectedSum, MatrixProcessor.calculateSum(matrix));
     }
 
