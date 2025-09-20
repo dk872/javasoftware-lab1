@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class MatrixProcessorTest {
 
     @Test
-    void validateNull() {
+    void testValidateNull() {
         byte[][] matrix = null;
 
         NullPointerException ex = assertThrows(NullPointerException.class, () ->
@@ -15,7 +15,7 @@ class MatrixProcessorTest {
     }
 
     @Test
-    void validateEmpty() {
+    void testValidateEmpty() {
         byte[][] matrix = new byte[0][0];
 
         IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->
@@ -24,7 +24,7 @@ class MatrixProcessorTest {
     }
 
     @Test
-    void validateNullRow() {
+    void testValidateNullRow() {
         byte[][] matrix = {
                 {1, 2},
                 null
@@ -36,7 +36,7 @@ class MatrixProcessorTest {
     }
 
     @Test
-    void validateEmptyRow() {
+    void testValidateEmptyRow() {
         byte[][] matrix = {
                 {1, 2},
                 {}
@@ -48,7 +48,7 @@ class MatrixProcessorTest {
     }
 
     @Test
-    void validateDiffRowLengths() {
+    void testValidateDiffRowLengths() {
         byte[][] matrix = {
                 {1, 2, 3},
                 {4, 5}
@@ -60,7 +60,7 @@ class MatrixProcessorTest {
     }
 
     @Test
-    void multiplyBasic() {
+    void testMultiplyBasic() {
         byte multiplier = 3;
         byte[][] matrix = {
                 {1, 2},
@@ -76,7 +76,7 @@ class MatrixProcessorTest {
     }
 
     @Test
-    void multiplyZero() {
+    void testMultiplyZero() {
         byte[][] matrix = {
                 {1, 2, 3},
                 {4, 5, 6}
@@ -91,7 +91,7 @@ class MatrixProcessorTest {
     }
 
     @Test
-    void multiplyMinMax() {
+    void testMultiplyMinMax() {
         byte multiplier = 1;
         byte[][] matrix = {
                 {Byte.MAX_VALUE, Byte.MIN_VALUE}
@@ -104,7 +104,7 @@ class MatrixProcessorTest {
     }
 
     @Test
-    void multiplyNegNoOverflow() {
+    void testMultiplyNegNoOverflow() {
         byte multiplier = -1;
         byte[][] matrix = {
                 {10, 20}
@@ -117,7 +117,7 @@ class MatrixProcessorTest {
     }
 
     @Test
-    void multiplyOverflow() {
+    void testMultiplyOverflow() {
         byte multiplier = 3; // 50 * 3 = 150 > Byte.MAX_VALUE (127)
         byte[][] matrix = {
                 {50, 2}
@@ -129,7 +129,7 @@ class MatrixProcessorTest {
     }
 
     @Test
-    void multiplyNegOverflow() {
+    void testMultiplyNegOverflow() {
         byte multiplier = -3; // -150 < Byte.MIN_VALUE (-128)
         byte[][] matrix = {
                 {50}
@@ -141,7 +141,7 @@ class MatrixProcessorTest {
     }
 
     @Test
-    void sumBasic() {
+    void testSumBasic() {
         byte[][] matrix = {
                 {1, 5, 3},    // max = 5
                 {7, 6, 2},    // min = 2
@@ -154,7 +154,7 @@ class MatrixProcessorTest {
     }
 
     @Test
-    void sumSingleEven() {
+    void testSumSingleEven() {
         byte[][] matrix = {
                 {10, 20, 30}
         };
@@ -163,7 +163,7 @@ class MatrixProcessorTest {
     }
 
     @Test
-    void sumSingleOdd() {
+    void testSumSingleOdd() {
         byte[][] matrix = {
                 {10, 20, 30},
                 {5, 1, 3}
@@ -174,7 +174,7 @@ class MatrixProcessorTest {
     }
 
     @Test
-    void sumNegative() {
+    void testSumNegative() {
         byte[][] matrix = {
                 {-10, -20, -5},
                 {-1, -50, -3},
@@ -186,7 +186,7 @@ class MatrixProcessorTest {
     }
 
     @Test
-    void sumOneEven() {
+    void testSumOneEven() {
         byte[][] matrix = {
                 {42}
         };
@@ -195,7 +195,7 @@ class MatrixProcessorTest {
     }
 
     @Test
-    void sumOneOdd() {
+    void testSumOneOdd() {
         byte[][] matrix = {
                 {10},
                 {-42}
